@@ -1,0 +1,44 @@
+<!-- app/views/pokemons/index.html.erb -->
+
+<div class="container">
+  <h1>Liste des pokemons</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attaque</th>
+      <th>Défense</th>
+      <th>Sp Atk</th>
+      <th>Sp Def</th>
+      <th>Vitesse</th>
+      <th>Génération</th>
+      <th>Légendaire</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @pokemons.each do |pokemon| %>
+      <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.type_1 %></td>
+        <td><%= pokemon.type_2 %></td>
+        <td><%= pokemon.total %></td>
+        <td><%= pokemon.hp %></td>
+        <td><%= pokemon.attack %></td>
+        <td><%= pokemon.defense %></td>
+        <td><%= pokemon.sp_atk %></td>
+        <td><%= pokemon.sp_def %></td>
+        <td><%= pokemon.speed %></td>
+        <td><%= pokemon.generation %></td>
+        <td><%= pokemon.legendary ? "Oui" : "Non" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= will_paginate @pokemons, renderer: BootstrapPagination::Rails %>
+</div>
+<p>sdfsdf</p>
